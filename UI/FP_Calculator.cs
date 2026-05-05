@@ -47,7 +47,7 @@ namespace Function_Point_Calculator
                 int[] ilf = { int.Parse(txtILF_Simple.Text), int.Parse(txtILF_Avg.Text), int.Parse(txtILF_Complex.Text) };
                 int[] eif = { int.Parse(txtEIF_Simple.Text), int.Parse(txtEIF_Avg.Text), int.Parse(txtEIF_Complex.Text) };
 
-                // currentUFP = CalculatorEngine.CalculateUFP(ei, eo, eq, ilf, eif);
+                currentUFP = CalculatorEngine.CalculateUFP(ei, eo, eq, ilf, eif);
 
                 lblUFPResult.Text = $"Total UFP: {currentUFP}";
             }
@@ -63,9 +63,9 @@ namespace Function_Point_Calculator
             {
                 int di = int.Parse(txtDI.Text);
 
-                // currentTCF = CalculatorEngine.CalculateTCF(di);
+                currentTCF = CalculatorEngine.CalculateTCF(di);
 
-                lblTCFResult.Text = $"TCF: {currentTCF}";
+                lblTCFResult.Text = $"TCF: {currentTCF:F2}";
             }
             catch (Exception)
             {
@@ -81,9 +81,9 @@ namespace Function_Point_Calculator
                 return;
             }
 
-            // currentFP = CalculatorEngine.CalculateFP(_currentUFP, _currentTCF);
+            currentFP = CalculatorEngine.CalculateFP(currentUFP, currentTCF);
 
-            lblFPResult.Text = $"Function Points: {currentFP}";
+            lblFPResult.Text = $"Function Points: {currentFP:F2}";
         }
 
         private void btnCalcFP_Click(object sender, EventArgs e)
@@ -94,17 +94,17 @@ namespace Function_Point_Calculator
                 return;
             }
 
-            if (cmbLanguage.SelectedItem == null)
+            string? selectedLanguage = cmbLanguage.SelectedItem?.ToString();
+
+            if (selectedLanguage == null)
             {
-                MessageBox.Show("Please select a target language from the dropdown.", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a valid language.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string selectedLanguage = cmbLanguage.SelectedItem.ToString();
+            estimatedLOC = CalculatorEngine.CalculateLOC(currentFP, selectedLanguage);
 
-            // estimatedLOC = CalculatorEngine.CalculateLOC(currentFP, selectedLanguage);
-
-            lblLOCResult.Text = $"Est. Lines of Code: {estimatedLOC}";
+            lblLOCResult.Text = $"Est. Lines of Code: {estimatedLOC:F2}";
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
