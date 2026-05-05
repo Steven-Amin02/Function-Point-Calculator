@@ -9,32 +9,29 @@ namespace Function_Point_Calculator.Logic
 {
     internal class CalculatorEngine
     {
-        public static int CalculateUFP (int[] ei, int[] eo, int[] eq, int[] ilf, int[] eif)
+        public static int CalculateUFP(int[] ei, int[] eo, int[] eq, int[] ilf, int[] eif)
         {
             int ufp = 0;
-            
-            ufp += ei[0] * MetricsData.ComplexityWeights["External Input"].Low;
-            ufp += ei[1] * MetricsData.ComplexityWeights["External Input"].Average;
-            ufp += ei[2] * MetricsData.ComplexityWeights["External Input"].High;
 
-            ufp += eo[0] * MetricsData.ComplexityWeights["External Output"].Low;
-            ufp += eo[1] * MetricsData.ComplexityWeights["External Output"].Average;
-            ufp += eo[2] * MetricsData.ComplexityWeights["External Output"].High;
-
-            ufp += eq[0] * MetricsData.ComplexityWeights["External Inquiry"].Low;
-            ufp += eq[1] * MetricsData.ComplexityWeights["External Inquiry"].Average;
-            ufp += eq[2] * MetricsData.ComplexityWeights["External Inquiry"].High;
-
-            ufp += ilf[0] * MetricsData.ComplexityWeights["Internal Logical File"].Low;
-            ufp += ilf[1] * MetricsData.ComplexityWeights["Internal Logical File"].Average;
-            ufp += ilf[2] * MetricsData.ComplexityWeights["Internal Logical File"].High;
-
-            ufp += eif[0] * MetricsData.ComplexityWeights["External Interface File"].Low;
-            ufp += eif[1] * MetricsData.ComplexityWeights["External Interface File"].Average;
-            ufp += eif[2] * MetricsData.ComplexityWeights["External Interface File"].High;
-
+            ufp += CalculateCategory(ei, "External Input");
+            ufp += CalculateCategory(eo, "External Output");
+            ufp += CalculateCategory(eq, "External Inquiry");
+            ufp += CalculateCategory(ilf, "Internal Logical File");
+            ufp += CalculateCategory(eif, "External Interface File");
 
             return ufp;
+        }
+
+        // Helper method 
+        private static int CalculateCategory(int[] counts, string categoryName)
+        {
+            if (counts == null || counts.Length < 3) return 0;
+
+            var weights = MetricsData.ComplexityWeights[categoryName];
+
+            return (counts[0] * weights.Low) +
+                   (counts[1] * weights.Average) +
+                   (counts[2] * weights.High);
         }
 
         public static double CalculateTCF (int di)
