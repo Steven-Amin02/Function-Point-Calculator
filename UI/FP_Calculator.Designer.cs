@@ -69,9 +69,13 @@
             btnCalcLOC = new Button();
             btnCalcTCF = new Button();
             btnCalcUFP = new Button();
+            panel2 = new Panel();
+            btnClose = new Button();
+            btnReset = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -163,7 +167,7 @@
             txtEQ_Complex.BackColor = Color.FromArgb(51, 51, 55);
             txtEQ_Complex.BorderStyle = BorderStyle.FixedSingle;
             txtEQ_Complex.ForeColor = Color.White;
-            txtEQ_Complex.Location = new Point(830, 198);
+            txtEQ_Complex.Location = new Point(830, 201);
             txtEQ_Complex.Name = "txtEQ_Complex";
             txtEQ_Complex.Size = new Size(208, 30);
             txtEQ_Complex.TabIndex = 19;
@@ -174,7 +178,7 @@
             txtILF_Complex.BackColor = Color.FromArgb(51, 51, 55);
             txtILF_Complex.BorderStyle = BorderStyle.FixedSingle;
             txtILF_Complex.ForeColor = Color.White;
-            txtILF_Complex.Location = new Point(830, 247);
+            txtILF_Complex.Location = new Point(830, 250);
             txtILF_Complex.Name = "txtILF_Complex";
             txtILF_Complex.Size = new Size(208, 30);
             txtILF_Complex.TabIndex = 18;
@@ -218,7 +222,7 @@
             txtEQ_Avg.BackColor = Color.FromArgb(51, 51, 55);
             txtEQ_Avg.BorderStyle = BorderStyle.FixedSingle;
             txtEQ_Avg.ForeColor = Color.White;
-            txtEQ_Avg.Location = new Point(564, 198);
+            txtEQ_Avg.Location = new Point(564, 201);
             txtEQ_Avg.Name = "txtEQ_Avg";
             txtEQ_Avg.Size = new Size(208, 30);
             txtEQ_Avg.TabIndex = 14;
@@ -229,7 +233,7 @@
             txtILF_Avg.BackColor = Color.FromArgb(51, 51, 55);
             txtILF_Avg.BorderStyle = BorderStyle.FixedSingle;
             txtILF_Avg.ForeColor = Color.White;
-            txtILF_Avg.Location = new Point(564, 247);
+            txtILF_Avg.Location = new Point(564, 250);
             txtILF_Avg.Name = "txtILF_Avg";
             txtILF_Avg.Size = new Size(208, 30);
             txtILF_Avg.TabIndex = 13;
@@ -273,7 +277,7 @@
             txtEQ_Simple.BackColor = Color.FromArgb(51, 51, 55);
             txtEQ_Simple.BorderStyle = BorderStyle.FixedSingle;
             txtEQ_Simple.ForeColor = Color.White;
-            txtEQ_Simple.Location = new Point(298, 197);
+            txtEQ_Simple.Location = new Point(298, 196);
             txtEQ_Simple.Name = "txtEQ_Simple";
             txtEQ_Simple.Size = new Size(208, 30);
             txtEQ_Simple.TabIndex = 9;
@@ -284,7 +288,7 @@
             txtILF_Simple.BackColor = Color.FromArgb(51, 51, 55);
             txtILF_Simple.BorderStyle = BorderStyle.FixedSingle;
             txtILF_Simple.ForeColor = Color.White;
-            txtILF_Simple.Location = new Point(298, 246);
+            txtILF_Simple.Location = new Point(298, 245);
             txtILF_Simple.Name = "txtILF_Simple";
             txtILF_Simple.Size = new Size(208, 30);
             txtILF_Simple.TabIndex = 8;
@@ -445,6 +449,7 @@
             // 
             // panel1
             // 
+            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(btnCalcFP);
             panel1.Controls.Add(lblLOCResult);
             panel1.Controls.Add(lblFPResult);
@@ -455,7 +460,7 @@
             panel1.Controls.Add(btnCalcUFP);
             panel1.Location = new Point(1150, 26);
             panel1.Name = "panel1";
-            panel1.Size = new Size(348, 571);
+            panel1.Size = new Size(348, 507);
             panel1.TabIndex = 2;
             // 
             // btnCalcFP
@@ -465,7 +470,7 @@
             btnCalcFP.FlatAppearance.BorderSize = 0;
             btnCalcFP.FlatStyle = FlatStyle.Flat;
             btnCalcFP.ForeColor = Color.White;
-            btnCalcFP.Location = new Point(62, 306);
+            btnCalcFP.Location = new Point(62, 250);
             btnCalcFP.Name = "btnCalcFP";
             btnCalcFP.Size = new Size(224, 40);
             btnCalcFP.TabIndex = 22;
@@ -477,7 +482,7 @@
             // 
             lblLOCResult.AutoSize = true;
             lblLOCResult.BackColor = Color.Transparent;
-            lblLOCResult.Location = new Point(82, 515);
+            lblLOCResult.Location = new Point(99, 457);
             lblLOCResult.Name = "lblLOCResult";
             lblLOCResult.Size = new Size(162, 23);
             lblLOCResult.TabIndex = 21;
@@ -487,7 +492,7 @@
             // 
             lblFPResult.AutoSize = true;
             lblFPResult.BackColor = Color.Transparent;
-            lblFPResult.Location = new Point(99, 372);
+            lblFPResult.Location = new Point(99, 327);
             lblFPResult.Name = "lblFPResult";
             lblFPResult.Size = new Size(145, 23);
             lblFPResult.TabIndex = 20;
@@ -497,7 +502,7 @@
             // 
             lblTCFResult.AutoSize = true;
             lblTCFResult.BackColor = Color.Transparent;
-            lblTCFResult.Location = new Point(123, 235);
+            lblTCFResult.Location = new Point(124, 201);
             lblTCFResult.Name = "lblTCFResult";
             lblTCFResult.Size = new Size(77, 23);
             lblTCFResult.TabIndex = 19;
@@ -520,7 +525,7 @@
             btnCalcLOC.FlatAppearance.BorderSize = 0;
             btnCalcLOC.FlatStyle = FlatStyle.Flat;
             btnCalcLOC.ForeColor = Color.White;
-            btnCalcLOC.Location = new Point(62, 450);
+            btnCalcLOC.Location = new Point(62, 378);
             btnCalcLOC.Name = "btnCalcLOC";
             btnCalcLOC.Size = new Size(224, 40);
             btnCalcLOC.TabIndex = 17;
@@ -535,7 +540,7 @@
             btnCalcTCF.FlatAppearance.BorderSize = 0;
             btnCalcTCF.FlatStyle = FlatStyle.Flat;
             btnCalcTCF.ForeColor = Color.White;
-            btnCalcTCF.Location = new Point(62, 167);
+            btnCalcTCF.Location = new Point(62, 140);
             btnCalcTCF.Name = "btnCalcTCF";
             btnCalcTCF.Size = new Size(224, 40);
             btnCalcTCF.TabIndex = 16;
@@ -558,12 +563,54 @@
             btnCalcUFP.UseVisualStyleBackColor = false;
             btnCalcUFP.Click += btnCalcUFP_Click;
             // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(btnClose);
+            panel2.Controls.Add(btnReset);
+            panel2.ForeColor = Color.White;
+            panel2.Location = new Point(1150, 539);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(348, 58);
+            panel2.TabIndex = 3;
+            // 
+            // btnClose
+            // 
+            btnClose.AccessibleName = "";
+            btnClose.BackColor = Color.FromArgb(0, 122, 204);
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.ForeColor = Color.White;
+            btnClose.Location = new Point(183, 13);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(103, 31);
+            btnClose.TabIndex = 0;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnReset
+            // 
+            btnReset.AccessibleName = "";
+            btnReset.BackColor = Color.FromArgb(0, 122, 204);
+            btnReset.Cursor = Cursors.Hand;
+            btnReset.FlatStyle = FlatStyle.Flat;
+            btnReset.ForeColor = Color.White;
+            btnReset.Location = new Point(62, 13);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(103, 31);
+            btnReset.TabIndex = 0;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
+            // 
             // FP_Calculator
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(45, 45, 48);
             ClientSize = new Size(1543, 609);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -580,6 +627,7 @@
             groupBox2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -626,5 +674,8 @@
         private Button btnCalcFP;
         private Label label11;
         private Label label12;
+        private Panel panel2;
+        private Button btnReset;
+        private Button btnClose;
     }
 }

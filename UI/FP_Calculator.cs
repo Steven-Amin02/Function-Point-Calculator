@@ -111,5 +111,76 @@ namespace Function_Point_Calculator
         {
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+            // Reset internal state
+            currentUFP = 0;
+            currentTCF = 0;
+            currentFP = 0;
+            estimatedLOC = 0;
+
+            // Reset UFP input fields to their default values (designer defaults are "0")
+            txtEI_Simple.Text = "0";
+            txtEI_Avg.Text = "0";
+            txtEI_Complex.Text = "0";
+
+            txtEO_Simple.Text = "0";
+            txtEO_Avg.Text = "0";
+            txtEO_Complex.Text = "0";
+
+            txtEQ_Simple.Text = "0";
+            txtEQ_Avg.Text = "0";
+            txtEQ_Complex.Text = "0";
+
+            txtILF_Simple.Text = "0";
+            txtILF_Avg.Text = "0";
+            txtILF_Complex.Text = "0";
+
+            txtEIF_Simple.Text = "0";
+            txtEIF_Avg.Text = "0";
+            txtEIF_Complex.Text = "0";
+
+            // Reset DI and language selection
+            txtDI.Text = string.Empty;
+            cmbLanguage.SelectedIndex = -1;
+
+            // Reset result labels to their initial text
+            lblUFPResult.Text = "Total UFP: 0";
+            lblTCFResult.Text = "TCF: 0.00";
+            lblFPResult.Text = "Function Points: 0";
+            lblLOCResult.Text = "Est. Lines of Code: 0";
+        }
+
+
+
+
+        private void lblTCFResult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUFPResult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+            
     }
 }
