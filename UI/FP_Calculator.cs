@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using Function_Point_Calculator.Logic;
+using Function_Point_Calculator.Data;
 
 namespace Function_Point_Calculator
 {
@@ -9,7 +10,7 @@ namespace Function_Point_Calculator
         private int currentUFP = 0;
         private double currentTCF = 0;
         private double currentFP = 0;
-        private double estimatedLOC;
+        private double estimatedLOC = 0;
 
         public FP_Calculator()
         {
@@ -20,7 +21,7 @@ namespace Function_Point_Calculator
         {
             cmbLanguage.Items.Clear();
 
-            foreach (string languageName in Data.MetricsData.AVC.Keys)
+            foreach (string languageName in MetricsData.AVC.Keys)
             {
                 cmbLanguage.Items.Add(languageName);
             }
@@ -73,7 +74,7 @@ namespace Function_Point_Calculator
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCalcFP_Click(object sender, EventArgs e)
         {
             if (currentUFP == 0 || currentTCF == 0)
             {
@@ -86,7 +87,7 @@ namespace Function_Point_Calculator
             lblFPResult.Text = $"Function Points: {currentFP:F2}";
         }
 
-        private void btnCalcFP_Click(object sender, EventArgs e)
+        private void btnCalcLOC_Click(object sender, EventArgs e)
         {
             if (currentFP == 0)
             {
@@ -94,22 +95,32 @@ namespace Function_Point_Calculator
                 return;
             }
 
-            string? selectedLanguage = cmbLanguage.SelectedItem?.ToString();
-
-            if (selectedLanguage == null)
+            if (chkManualAVC.Checked)
             {
-                MessageBox.Show("Please select a valid language.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (int.TryParse(txtManualAVC.Text, out int manualAvc))
+                {
+                    estimatedLOC = CalculatorEngine.CalculateLOC(currentFP, manualAvc);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid whole number for the manual LOC/FP multiplier.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            else
+            {
+                string? selectedLanguage = cmbLanguage.SelectedItem?.ToString();
+
+                if (selectedLanguage == null)
+                {
+                    MessageBox.Show("Please select a valid language.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                estimatedLOC = CalculatorEngine.CalculateLOC(currentFP, selectedLanguage);
             }
 
-            estimatedLOC = CalculatorEngine.CalculateLOC(currentFP, selectedLanguage);
-
             lblLOCResult.Text = $"Est. Lines of Code: {estimatedLOC:F2}";
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -150,6 +161,8 @@ namespace Function_Point_Calculator
             // Reset DI and language selection
             txtDI.Text = string.Empty;
             cmbLanguage.SelectedIndex = -1;
+            chkManualAVC.Checked = false;
+            txtManualAVC.Text = string.Empty;
 
             // Reset result labels to their initial text
             lblUFPResult.Text = "Total UFP: 0";
@@ -158,29 +171,10 @@ namespace Function_Point_Calculator
             lblLOCResult.Text = "Est. Lines of Code: 0";
         }
 
-
-
-
-        private void lblTCFResult_Click(object sender, EventArgs e)
+        private void chkManualAVC_CheckedChanged(object sender, EventArgs e)
         {
-
+            txtManualAVC.Enabled = chkManualAVC.Checked;
+            cmbLanguage.Enabled = !chkManualAVC.Checked;
         }
-
-        private void lblUFPResult_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-
-            
     }
 }

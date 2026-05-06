@@ -53,5 +53,10 @@ namespace Function_Point_Calculator.Logic
 
             return fp * avc;
         }
+
+        public static double CalculateLOC(double fp, int manualAVC)
+        {
+            return fp * manualAVC;
+        }
     }
 }

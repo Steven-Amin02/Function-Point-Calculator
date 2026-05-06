@@ -87,8 +87,6 @@ namespace Function_Point_Calculator.UI
             if (totalDI < 25) lblTotalDI.ForeColor = Color.Green;
             else if (totalDI < 50) lblTotalDI.ForeColor = Color.Orange;
             else lblTotalDI.ForeColor = Color.Red;
-
-
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -101,6 +99,7 @@ namespace Function_Point_Calculator.UI
             {
                 UpdateTrackBarDisplay(i);
             }
+            trackBarMaster.Value = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -109,34 +108,15 @@ namespace Function_Point_Calculator.UI
             this.Close();
         }
 
-        private void DI_Calculator_Load(object sender, EventArgs e)
+        private void trackBarMaster_Scroll(object sender, EventArgs e)
         {
+            int masterValue = trackBarMaster.Value;
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void trackBar6_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTotalDI_Click(object sender, EventArgs e)
-        {
-
+            for (int i = 0; i < trackBars.Length; i++)
+            {
+                trackBars[i].Value = masterValue;
+                UpdateTrackBarDisplay(i);
+            }
         }
     }
 }
