@@ -38,7 +38,7 @@ namespace Function_Point_Calculator.UI
                 trackBars[i].Maximum = 5;
                 trackBars[i].Value = 0;
 
-                int index = i; // for closure
+                int index = i; 
                 trackBars[i].Scroll += (s, e) => UpdateTrackBarDisplay(index);
 
                 if (i < factorLabels.Length && factorLabels[i] != null)
@@ -46,7 +46,7 @@ namespace Function_Point_Calculator.UI
                     toolTip1.SetToolTip(factorLabels[i], tooltips[i]);
                 }
 
-                // Initial update
+                
                 UpdateTrackBarDisplay(index);
             }
         }
