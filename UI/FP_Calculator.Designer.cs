@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
             label11 = new Label();
             label10 = new Label();
@@ -61,10 +62,11 @@
             cmbLanguage = new ComboBox();
             label7 = new Label();
             panel1 = new Panel();
+            lblTCFResult = new TextBox();
             btnCalcFP = new Button();
             lblLOCResult = new Label();
             lblFPResult = new Label();
-            lblTCFResult = new Label();
+            lblTCFResult1 = new Label();
             lblUFPResult = new Label();
             btnCalcLOC = new Button();
             btnCalcTCF = new Button();
@@ -76,6 +78,7 @@
             groupBox3 = new GroupBox();
             txtManualAVC = new TextBox();
             label13 = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             panel1.SuspendLayout();
@@ -121,7 +124,7 @@
             label11.BackColor = Color.FromArgb(45, 45, 48);
             label11.Location = new Point(6, -3);
             label11.Name = "label11";
-            label11.Size = new Size(303, 28);
+            label11.Size = new Size(264, 23);
             label11.TabIndex = 24;
             label11.Text = "Unadjusted Function Points (UFP)";
             // 
@@ -131,7 +134,7 @@
             label10.BackColor = Color.Transparent;
             label10.Location = new Point(848, 54);
             label10.Name = "label10";
-            label10.Size = new Size(147, 28);
+            label10.Size = new Size(129, 23);
             label10.TabIndex = 23;
             label10.Text = "Complex Count";
             // 
@@ -141,7 +144,7 @@
             label9.BackColor = Color.Transparent;
             label9.Location = new Point(589, 54);
             label9.Name = "label9";
-            label9.Size = new Size(142, 28);
+            label9.Size = new Size(124, 23);
             label9.TabIndex = 22;
             label9.Text = "Average Count";
             // 
@@ -151,7 +154,7 @@
             label8.BackColor = Color.Transparent;
             label8.Location = new Point(327, 54);
             label8.Name = "label8";
-            label8.Size = new Size(130, 28);
+            label8.Size = new Size(113, 23);
             label8.TabIndex = 21;
             label8.Text = "Simple Count";
             // 
@@ -162,7 +165,7 @@
             txtEIF_Complex.ForeColor = Color.White;
             txtEIF_Complex.Location = new Point(830, 297);
             txtEIF_Complex.Name = "txtEIF_Complex";
-            txtEIF_Complex.Size = new Size(208, 34);
+            txtEIF_Complex.Size = new Size(208, 30);
             txtEIF_Complex.TabIndex = 20;
             txtEIF_Complex.Text = "0";
             // 
@@ -173,7 +176,7 @@
             txtEQ_Complex.ForeColor = Color.White;
             txtEQ_Complex.Location = new Point(830, 201);
             txtEQ_Complex.Name = "txtEQ_Complex";
-            txtEQ_Complex.Size = new Size(208, 34);
+            txtEQ_Complex.Size = new Size(208, 30);
             txtEQ_Complex.TabIndex = 19;
             txtEQ_Complex.Text = "0";
             // 
@@ -184,7 +187,7 @@
             txtILF_Complex.ForeColor = Color.White;
             txtILF_Complex.Location = new Point(830, 250);
             txtILF_Complex.Name = "txtILF_Complex";
-            txtILF_Complex.Size = new Size(208, 34);
+            txtILF_Complex.Size = new Size(208, 30);
             txtILF_Complex.TabIndex = 18;
             txtILF_Complex.Text = "0";
             // 
@@ -195,7 +198,7 @@
             txtEO_Complex.ForeColor = Color.White;
             txtEO_Complex.Location = new Point(830, 149);
             txtEO_Complex.Name = "txtEO_Complex";
-            txtEO_Complex.Size = new Size(208, 34);
+            txtEO_Complex.Size = new Size(208, 30);
             txtEO_Complex.TabIndex = 17;
             txtEO_Complex.Text = "0";
             // 
@@ -206,7 +209,7 @@
             txtEI_Complex.ForeColor = Color.White;
             txtEI_Complex.Location = new Point(830, 103);
             txtEI_Complex.Name = "txtEI_Complex";
-            txtEI_Complex.Size = new Size(208, 34);
+            txtEI_Complex.Size = new Size(208, 30);
             txtEI_Complex.TabIndex = 16;
             txtEI_Complex.Text = "0";
             // 
@@ -217,7 +220,7 @@
             txtEIF_Avg.ForeColor = Color.White;
             txtEIF_Avg.Location = new Point(564, 297);
             txtEIF_Avg.Name = "txtEIF_Avg";
-            txtEIF_Avg.Size = new Size(208, 34);
+            txtEIF_Avg.Size = new Size(208, 30);
             txtEIF_Avg.TabIndex = 15;
             txtEIF_Avg.Text = "0";
             // 
@@ -228,7 +231,7 @@
             txtEQ_Avg.ForeColor = Color.White;
             txtEQ_Avg.Location = new Point(564, 201);
             txtEQ_Avg.Name = "txtEQ_Avg";
-            txtEQ_Avg.Size = new Size(208, 34);
+            txtEQ_Avg.Size = new Size(208, 30);
             txtEQ_Avg.TabIndex = 14;
             txtEQ_Avg.Text = "0";
             // 
@@ -239,7 +242,7 @@
             txtILF_Avg.ForeColor = Color.White;
             txtILF_Avg.Location = new Point(564, 250);
             txtILF_Avg.Name = "txtILF_Avg";
-            txtILF_Avg.Size = new Size(208, 34);
+            txtILF_Avg.Size = new Size(208, 30);
             txtILF_Avg.TabIndex = 13;
             txtILF_Avg.Text = "0";
             // 
@@ -250,7 +253,7 @@
             txtEO_Avg.ForeColor = Color.White;
             txtEO_Avg.Location = new Point(564, 149);
             txtEO_Avg.Name = "txtEO_Avg";
-            txtEO_Avg.Size = new Size(208, 34);
+            txtEO_Avg.Size = new Size(208, 30);
             txtEO_Avg.TabIndex = 12;
             txtEO_Avg.Text = "0";
             // 
@@ -261,7 +264,7 @@
             txtEI_Avg.ForeColor = Color.White;
             txtEI_Avg.Location = new Point(564, 103);
             txtEI_Avg.Name = "txtEI_Avg";
-            txtEI_Avg.Size = new Size(208, 34);
+            txtEI_Avg.Size = new Size(208, 30);
             txtEI_Avg.TabIndex = 11;
             txtEI_Avg.Text = "0";
             // 
@@ -272,7 +275,7 @@
             txtEIF_Simple.ForeColor = Color.White;
             txtEIF_Simple.Location = new Point(298, 296);
             txtEIF_Simple.Name = "txtEIF_Simple";
-            txtEIF_Simple.Size = new Size(208, 34);
+            txtEIF_Simple.Size = new Size(208, 30);
             txtEIF_Simple.TabIndex = 10;
             txtEIF_Simple.Text = "0";
             // 
@@ -283,7 +286,7 @@
             txtEQ_Simple.ForeColor = Color.White;
             txtEQ_Simple.Location = new Point(298, 196);
             txtEQ_Simple.Name = "txtEQ_Simple";
-            txtEQ_Simple.Size = new Size(208, 34);
+            txtEQ_Simple.Size = new Size(208, 30);
             txtEQ_Simple.TabIndex = 9;
             txtEQ_Simple.Text = "0";
             // 
@@ -294,7 +297,7 @@
             txtILF_Simple.ForeColor = Color.White;
             txtILF_Simple.Location = new Point(298, 245);
             txtILF_Simple.Name = "txtILF_Simple";
-            txtILF_Simple.Size = new Size(208, 34);
+            txtILF_Simple.Size = new Size(208, 30);
             txtILF_Simple.TabIndex = 8;
             txtILF_Simple.Text = "0";
             // 
@@ -305,7 +308,7 @@
             txtEO_Simple.ForeColor = Color.White;
             txtEO_Simple.Location = new Point(298, 148);
             txtEO_Simple.Name = "txtEO_Simple";
-            txtEO_Simple.Size = new Size(208, 34);
+            txtEO_Simple.Size = new Size(208, 30);
             txtEO_Simple.TabIndex = 7;
             txtEO_Simple.Text = "0";
             // 
@@ -316,7 +319,7 @@
             txtEI_Simple.ForeColor = Color.White;
             txtEI_Simple.Location = new Point(298, 102);
             txtEI_Simple.Name = "txtEI_Simple";
-            txtEI_Simple.Size = new Size(208, 34);
+            txtEI_Simple.Size = new Size(208, 30);
             txtEI_Simple.TabIndex = 6;
             txtEI_Simple.Text = "0";
             // 
@@ -326,7 +329,7 @@
             label5.BackColor = Color.Transparent;
             label5.Location = new Point(29, 203);
             label5.Name = "label5";
-            label5.Size = new Size(147, 28);
+            label5.Size = new Size(129, 23);
             label5.TabIndex = 5;
             label5.Text = "External Inquiry";
             // 
@@ -336,7 +339,7 @@
             label4.BackColor = Color.Transparent;
             label4.Location = new Point(29, 302);
             label4.Name = "label4";
-            label4.Size = new Size(204, 28);
+            label4.Size = new Size(180, 23);
             label4.TabIndex = 4;
             label4.Text = "External Interface Files";
             // 
@@ -346,7 +349,7 @@
             label3.BackColor = Color.Transparent;
             label3.Location = new Point(29, 252);
             label3.Name = "label3";
-            label3.Size = new Size(188, 28);
+            label3.Size = new Size(164, 23);
             label3.TabIndex = 3;
             label3.Text = "Internal Logical Files";
             // 
@@ -356,7 +359,7 @@
             label2.BackColor = Color.Transparent;
             label2.Location = new Point(29, 154);
             label2.Name = "label2";
-            label2.Size = new Size(149, 28);
+            label2.Size = new Size(131, 23);
             label2.TabIndex = 2;
             label2.Text = "External Output";
             // 
@@ -366,7 +369,7 @@
             label1.BackColor = Color.Transparent;
             label1.Location = new Point(29, 103);
             label1.Name = "label1";
-            label1.Size = new Size(132, 28);
+            label1.Size = new Size(117, 23);
             label1.TabIndex = 1;
             label1.Text = "External Input";
             // 
@@ -388,7 +391,7 @@
             label12.BackColor = Color.FromArgb(45, 45, 48);
             label12.Location = new Point(6, -2);
             label12.Name = "label12";
-            label12.Size = new Size(226, 28);
+            label12.Size = new Size(195, 23);
             label12.TabIndex = 25;
             label12.Text = "Complexity Factors (TCF)";
             // 
@@ -414,7 +417,7 @@
             txtDI.ForeColor = Color.White;
             txtDI.Location = new Point(403, 50);
             txtDI.Name = "txtDI";
-            txtDI.Size = new Size(208, 34);
+            txtDI.Size = new Size(208, 30);
             txtDI.TabIndex = 11;
             // 
             // label6
@@ -423,7 +426,7 @@
             label6.BackColor = Color.Transparent;
             label6.Location = new Point(111, 50);
             label6.Name = "label6";
-            label6.Size = new Size(181, 28);
+            label6.Size = new Size(160, 23);
             label6.TabIndex = 11;
             label6.Text = "Degree of Influence";
             // 
@@ -436,7 +439,7 @@
             cmbLanguage.FormattingEnabled = true;
             cmbLanguage.Location = new Point(298, 47);
             cmbLanguage.Name = "cmbLanguage";
-            cmbLanguage.Size = new Size(208, 36);
+            cmbLanguage.Size = new Size(208, 31);
             cmbLanguage.TabIndex = 14;
             // 
             // label7
@@ -445,17 +448,18 @@
             label7.BackColor = Color.Transparent;
             label7.Location = new Point(111, 47);
             label7.Name = "label7";
-            label7.Size = new Size(156, 28);
+            label7.Size = new Size(137, 23);
             label7.TabIndex = 13;
             label7.Text = "Target Language";
             // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(lblTCFResult);
             panel1.Controls.Add(btnCalcFP);
             panel1.Controls.Add(lblLOCResult);
             panel1.Controls.Add(lblFPResult);
-            panel1.Controls.Add(lblTCFResult);
+            panel1.Controls.Add(lblTCFResult1);
             panel1.Controls.Add(lblUFPResult);
             panel1.Controls.Add(btnCalcLOC);
             panel1.Controls.Add(btnCalcTCF);
@@ -464,6 +468,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 507);
             panel1.TabIndex = 2;
+            // 
+            // lblTCFResult
+            // 
+            lblTCFResult.BackColor = Color.FromArgb(51, 51, 55);
+            lblTCFResult.BorderStyle = BorderStyle.FixedSingle;
+            lblTCFResult.ForeColor = Color.White;
+            lblTCFResult.Location = new Point(109, 198);
+            lblTCFResult.Name = "lblTCFResult";
+            lblTCFResult.Size = new Size(159, 30);
+            lblTCFResult.TabIndex = 26;
+            lblTCFResult.TextChanged += lblTCFResult_TextChanged;
             // 
             // btnCalcFP
             // 
@@ -486,7 +501,7 @@
             lblLOCResult.BackColor = Color.Transparent;
             lblLOCResult.Location = new Point(62, 446);
             lblLOCResult.Name = "lblLOCResult";
-            lblLOCResult.Size = new Size(183, 28);
+            lblLOCResult.Size = new Size(162, 23);
             lblLOCResult.TabIndex = 21;
             lblLOCResult.Text = "Est. Lines of Code: 0";
             // 
@@ -496,19 +511,20 @@
             lblFPResult.BackColor = Color.Transparent;
             lblFPResult.Location = new Point(62, 312);
             lblFPResult.Name = "lblFPResult";
-            lblFPResult.Size = new Size(166, 28);
+            lblFPResult.Size = new Size(145, 23);
             lblFPResult.TabIndex = 20;
             lblFPResult.Text = "Function Points: 0";
             // 
-            // lblTCFResult
+            // lblTCFResult1
             // 
-            lblTCFResult.AutoSize = true;
-            lblTCFResult.BackColor = Color.Transparent;
-            lblTCFResult.Location = new Point(62, 195);
-            lblTCFResult.Name = "lblTCFResult";
-            lblTCFResult.Size = new Size(89, 28);
-            lblTCFResult.TabIndex = 19;
-            lblTCFResult.Text = "TCF: 0.00";
+            lblTCFResult1.AutoSize = true;
+            lblTCFResult1.BackColor = Color.Transparent;
+            lblTCFResult1.Location = new Point(62, 200);
+            lblTCFResult1.Name = "lblTCFResult1";
+            lblTCFResult1.Size = new Size(41, 23);
+            lblTCFResult1.TabIndex = 19;
+            lblTCFResult1.Text = "TCF:";
+            lblTCFResult1.Click += lblTCFResult1_Click;
             // 
             // lblUFPResult
             // 
@@ -516,7 +532,7 @@
             lblUFPResult.BackColor = Color.Transparent;
             lblUFPResult.Location = new Point(62, 84);
             lblUFPResult.Name = "lblUFPResult";
-            lblUFPResult.Size = new Size(114, 28);
+            lblUFPResult.Size = new Size(99, 23);
             lblUFPResult.TabIndex = 18;
             lblUFPResult.Text = "Total UFP: 0";
             // 
@@ -613,7 +629,7 @@
             chkManualAVC.AutoSize = true;
             chkManualAVC.Location = new Point(564, 46);
             chkManualAVC.Name = "chkManualAVC";
-            chkManualAVC.Size = new Size(237, 32);
+            chkManualAVC.Size = new Size(207, 27);
             chkManualAVC.TabIndex = 26;
             chkManualAVC.Text = "Enter LOC/FP Manually";
             chkManualAVC.UseVisualStyleBackColor = true;
@@ -640,7 +656,7 @@
             txtManualAVC.ForeColor = Color.White;
             txtManualAVC.Location = new Point(830, 45);
             txtManualAVC.Name = "txtManualAVC";
-            txtManualAVC.Size = new Size(208, 34);
+            txtManualAVC.Size = new Size(208, 30);
             txtManualAVC.TabIndex = 26;
             // 
             // label13
@@ -649,13 +665,19 @@
             label13.BackColor = Color.FromArgb(45, 45, 48);
             label13.Location = new Point(6, 0);
             label13.Name = "label13";
-            label13.Size = new Size(221, 28);
+            label13.Size = new Size(193, 23);
             label13.TabIndex = 26;
             label13.Text = "Specific Language (LOC)";
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
             // FP_Calculator
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(45, 45, 48);
             ClientSize = new Size(1543, 638);
@@ -708,7 +730,7 @@
         private Button btnCalcUFP;
         private Label lblLOCResult;
         private Label lblFPResult;
-        private Label lblTCFResult;
+        private Label lblTCFResult1;
         private Label lblUFPResult;
         private TextBox txtEIF_Complex;
         private TextBox txtEQ_Complex;
@@ -733,5 +755,7 @@
         private GroupBox groupBox3;
         private Label label13;
         private TextBox txtManualAVC;
+        private TextBox lblTCFResult;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -60,13 +60,14 @@ namespace Function_Point_Calculator
 
         private void btnCalcTCF_Click(object sender, EventArgs e)
         {
+
             try
             {
                 int di = int.Parse(txtDI.Text);
 
                 currentTCF = CalculatorEngine.CalculateTCF(di);
 
-                lblTCFResult.Text = $"TCF: {currentTCF:F2}";
+                lblTCFResult.Text = $"{currentTCF:F2}";
             }
             catch (Exception)
             {
@@ -166,7 +167,7 @@ namespace Function_Point_Calculator
 
             // Reset result labels to their initial text
             lblUFPResult.Text = "Total UFP: 0";
-            lblTCFResult.Text = "TCF: 0.00";
+            lblTCFResult1.Text = "TCF: 0.00";
             lblFPResult.Text = "Function Points: 0";
             lblLOCResult.Text = "Est. Lines of Code: 0";
         }
@@ -175,6 +176,16 @@ namespace Function_Point_Calculator
         {
             txtManualAVC.Enabled = chkManualAVC.Checked;
             cmbLanguage.Enabled = !chkManualAVC.Checked;
+        }
+
+        private void lblTCFResult1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTCFResult_TextChanged(object sender, EventArgs e)
+        {
+            currentTCF = double.Parse(lblTCFResult.Text);
         }
     }
 }
